@@ -13,7 +13,11 @@
   	selector:'textarea',
   	language: 'el',
     menubar: 'file edit view insert format tools table help',
-  toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+    plugins: [
+            "code"
+    ],
+  toolbar: ['undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | forecolor backcolor removeformat ',' alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | code '],
+
   //toolbar_sticky: true,
   
 
@@ -23,8 +27,11 @@
 </script>
 </head>
 <body>
-  <form>
-  <textarea>Γράψτε το κέιμενο εδώ:</textarea>
+  <form action="return_request.php" target="_blank" method="POST" >
+  <textarea name="mytext" >Γράψτε το κέιμενο εδώ:</textarea>
+
+
+  <input type="submit">
   </form>
   <hr>
   <p onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" >
