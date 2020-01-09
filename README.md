@@ -12,7 +12,7 @@ Class tinymce skeleton/template
 # Examples:
 - http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
 - http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=giorti25mart01
-- http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=giorti_apokries01.htm
+- http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=giorti_apokries01
 
 # Template for numbered table (for lesson with songs etc)
 ```html
