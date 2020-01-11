@@ -2,7 +2,7 @@
 Class tinymce skeleton/template
 
 # Changes:
-- 200110 - added gecko_spellcheck : true,  (use browser build-in dictionary)
+- 200110 - added gecko_spellcheck : true,   (use browser build-in dictionary) & added plugin "image"
 - 200108 - giorti_apokries01.htm
 - 191217c added probeserver for custom file load
 -
@@ -56,7 +56,7 @@ Class tinymce skeleton/template
     height: "300",
     menubar: 'file edit view insert format tools table help',
     plugins: [
-             "table"
+             "table","image"
     ],    
     toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
     gecko_spellcheck : true,
