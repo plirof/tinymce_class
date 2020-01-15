@@ -4,17 +4,14 @@
 *
 *
 * Changes:
+* ver200114 - probeserver reloads every 30sec, else load it once
 * ver191216 -initial tinymce version - sample http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
-* ver190411 -noopengame (initial ver) (removes opengame -in case we run a plain Http server with no PHP)
-* ver190410 -opengame (initial ver)
-* ver190404 -showdiv
-* ver190402 -all scripts are now in footer
 * 
 * example : index.html?showdiv5\&timer3\&probeserver , 
 */
 
-    var first_click=true;
-    var url_time_param=location.search.substring(1).indexOf("time");
+var first_click=true;
+var url_time_param=location.search.substring(1).indexOf("time");
 
 var url_string = location;// "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
 var url = new URL(location.href);
@@ -66,7 +63,7 @@ var jsonrequestInterval = function () {
     
 };
 
-if(server_probing_enabled) setInterval(jsonrequestInterval, timer_server_probe);
+if(server_probing_enabled) {setInterval(jsonrequestInterval, timer_server_probe); }else {jsonrequestInterval();}
 
 //-------------------probeserver ---------------
 
