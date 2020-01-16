@@ -22,6 +22,10 @@ These will probe for the file (.htm) every 30seconds
 
 Tip: if you add the word "reload" anywhere in the text file you will get a full page reload.This might be used for lesson/text reseting eg while an hour change.
 
+# Notes :
+- Διαλυτικά: [για Linux + Win ] ταυτόχρονα Shift + ‘τόνος’ και μετά το φωνήεν.
+- Διαλυτικά και τόνος όπως “Μαΐου”:    [για Linux] ταυτόχρονα Shift+ ‘τόνος‘, μετά ξανά ‘τόνος’ και μετά το φωνήεν.
+
 
 # Template for numbered table (for lesson with songs etc)
 ```html
