@@ -45,12 +45,12 @@ var jsonrequestInterval = function () {
     jsonrequestIntervaled.send();
     jsonrequestIntervaled.onreadystatechange = function () {
         if (jsonrequestIntervaled.readyState == 4) {
-            console.log("The request was made and returned results (with random number="+random_number);
+            console.log("The request was made and returned status="+jsonrequestIntervaled.status+" , and results (with random number="+random_number);
             var response_string =jsonrequestIntervaled.responseText;
 
-            //always add our extra text
-            document.getElementById("probeserver").innerHTML = response_string;
-            
+            //always add our extra text -unless we got an 404 not found error
+            if (jsonrequestIntervaled.status!=404 && jsonrequestIntervaled.status!=0) document.getElementById("probeserver").innerHTML = response_string;
+                        
             //in case we put the word reload, refresh browser
             if (response_string.indexOf("reload") !== -1) {
                 console.log("refreshing browser");
