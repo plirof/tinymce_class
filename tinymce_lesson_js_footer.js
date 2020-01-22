@@ -75,14 +75,14 @@ var jsonrequestInterval = function () {
 
     // (((((((((((((((((((  option to hide only specific DIV (((((((((((((((((((
     if((url_hidediv_param!==-1 ) && (url_time_param==-1 ) ){  //disable show_url IF we have set timer
-            //if((url_hidediv1==-1) && (url_time_param==-1 )) document.getElementById("div1").style.visibility = "hidden";
-         if(url_hidediv1!==-1) document.getElementById("div1").style.visibility = "hidden";
-         if(url_hidediv2!==-1) document.getElementById("div2").style.visibility = "hidden";
-         if(url_hidediv3!==-1) document.getElementById("div3").style.visibility = "hidden";
-         if(url_hidediv4!==-1) document.getElementById("div4").style.visibility = "hidden";
-         if(url_hidediv5!==-1) document.getElementById("div5").style.visibility = "hidden";
-         if(url_hidediv6!==-1) document.getElementById("div6").style.visibility = "hidden";
-         if(url_hidediv7!==-1) document.getElementById("div7").style.visibility = "hidden";    
+            //if((url_hidediv1==-1) && (url_time_param==-1 )) document.getElementById("div1").style.display = "none";
+         if(url_hidediv1!==-1) document.getElementById("div1").style.display = "none";
+         if(url_hidediv2!==-1) document.getElementById("div2").style.display = "none";
+         if(url_hidediv3!==-1) document.getElementById("div3").style.display = "none";
+         if(url_hidediv4!==-1) document.getElementById("div4").style.display = "none";
+         if(url_hidediv5!==-1) document.getElementById("div5").style.display = "none";
+         if(url_hidediv6!==-1) document.getElementById("div6").style.display = "none";
+         if(url_hidediv7!==-1) document.getElementById("div7").style.display = "none";    
     } 
     // ))))))))))))))))  option to hide only specific DIV  )))))))))))))))))))))))
 
