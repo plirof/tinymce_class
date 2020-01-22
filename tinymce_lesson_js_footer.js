@@ -50,7 +50,7 @@ var jsonrequestInterval = function () {
 
             //always add our extra text -unless we got an 404 not found error
             if (jsonrequestIntervaled.status!=404 && jsonrequestIntervaled.status!=0) document.getElementById("probeserver").innerHTML = response_string;
-                        
+
             //in case we put the word reload, refresh browser
             if (response_string.indexOf("reload") !== -1) {
                 console.log("refreshing browser");
@@ -62,6 +62,8 @@ var jsonrequestInterval = function () {
     };
     
 };
+
+if (file_name_param!==-1) jsonrequestInterval();
 
 if(server_probing_enabled) {setInterval(jsonrequestInterval, timer_server_probe); }else {jsonrequestInterval();}
 
