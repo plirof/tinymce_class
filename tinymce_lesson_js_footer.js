@@ -4,6 +4,7 @@
 *
 *
 * Changes:
+* ver200121 - hidediv1-hidediv7 : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&hidediv2&hidediv1
 * ver200114 - probeserver reloads every 30sec, else load it once
 * ver191216 -initial tinymce version - sample http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
 * 
@@ -19,6 +20,20 @@ var url = new URL(location.href);
 var file_name_param = url.searchParams.get("file");
 
 console.log(file_name_param);
+
+
+
+// (((((((((((((((((((  option to hide only specific DIV (((((((((((((((((((
+    var url_hidediv_param=location.search.substring(1).indexOf("hidediv");// != to -1 if we have this param
+    var url_hidediv1=location.search.substring(1).indexOf("hidediv1");
+    var url_hidediv2=location.search.substring(1).indexOf("hidediv2");
+    var url_hidediv3=location.search.substring(1).indexOf("hidediv3");
+    var url_hidediv4=location.search.substring(1).indexOf("hidediv4");
+    var url_hidediv5=location.search.substring(1).indexOf("hidediv5");
+    var url_hidediv6=location.search.substring(1).indexOf("hidediv6");
+    var url_hidediv7=location.search.substring(1).indexOf("hidediv7");
+// ))))))))))))))))  option to hide only specific DIV  )))))))))))))))))))))))
+
 
 
 //+++++++++++++++++++ probeserver4lessons v02 1911+++++++++++++++++
@@ -57,9 +72,23 @@ var jsonrequestInterval = function () {
                 //document.getElementById("probeserver").innerHTML = response_string;
                 window.location.reload(true);
             }
+
+    // (((((((((((((((((((  option to hide only specific DIV (((((((((((((((((((
+    if((url_hidediv_param!==-1 ) && (url_time_param==-1 ) ){  //disable show_url IF we have set timer
+            //if((url_hidediv1==-1) && (url_time_param==-1 )) document.getElementById("div1").style.visibility = "hidden";
+         if(url_hidediv1!==-1) document.getElementById("div1").style.visibility = "hidden";
+         if(url_hidediv2!==-1) document.getElementById("div2").style.visibility = "hidden";
+         if(url_hidediv3!==-1) document.getElementById("div3").style.visibility = "hidden";
+         if(url_hidediv4!==-1) document.getElementById("div4").style.visibility = "hidden";
+         if(url_hidediv5!==-1) document.getElementById("div5").style.visibility = "hidden";
+         if(url_hidediv6!==-1) document.getElementById("div6").style.visibility = "hidden";
+         if(url_hidediv7!==-1) document.getElementById("div7").style.visibility = "hidden";    
+    } 
+    // ))))))))))))))))  option to hide only specific DIV  )))))))))))))))))))))))
+
             
         }
-    };
+    }; // end of jsonrequestIntervaled.onreadystatechange = function () {
     
 };
 
