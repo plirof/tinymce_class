@@ -92,7 +92,8 @@ var jsonrequestInterval = function () {
     
 };
 
-if (file_name_param!==-1) jsonrequestInterval();
+//if (file_name_param!==-1) jsonrequestInterval();
+if (file_name_param!==null) jsonrequestInterval();
 
 if(server_probing_enabled) {setInterval(jsonrequestInterval, timer_server_probe); }else {jsonrequestInterval();}
 
