@@ -31,12 +31,14 @@ var handle_sch_stuff = function () {
 
 
 	document.getElementById("probeserver").innerHTML = "<img src="+url_sch_image_fullpath+" >";
+	document.getElementById("myForm").action = url_sch_form_action_fullpath;
+
 
 }
 
 
 
-if (schusr!==null)handle_sch_stuff();
+if (schusr!==-1)handle_sch_stuff();
 
  
 //var file_name_param = url.searchParams.get("file");
