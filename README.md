@@ -84,5 +84,6 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 
 # To Do:
 - add option to send text as a url parameter (instead of file)
--
+- remote option : add <form> , add name , class, school and SUMBIT button
+- remote : remote username of sch.gr ,remote sch folder then inside it remote_html file, remote_jpg file , remote index.php file that saves/appends locally ergasies in html
 -
