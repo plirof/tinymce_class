@@ -8,7 +8,7 @@ foreach($_REQUEST as $key=>$value) {
 }
 
 $filename = 'answers.htm';
-$firstline='<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><BR>\n';
+$firstline='<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><BR>'."\n";
 if (!file_exists($filename)) {   $values=$firstline.$values; }
 file_put_contents($filename, $values."<HR>\n", FILE_APPEND);
 //$handle = fopen($filename, 'w');

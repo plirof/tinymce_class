@@ -1,0 +1,34 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><BR>
+<body>
+<h3></h3>
+<p><strong>Σημείωση:</strong></p>
+<p>Αυτό το script είναι μια επιλογή. Αν σας φαίνεται πολύ απλή <strong>μπορείτε να την αγνοήσετε</strong> (ή να τροποποιήσετε το index.php -πχ αν θέλετε να προσθέσετε passwords)</p>
+<p> </p>
+<p><strong>Έχουμε 2 επιλογές:</strong></p>
+<p>1. Απλά λέμε στα παιδιά να αντιγράψουν ένα κείμενο εδώ πχ από κάποια εικόνα/pdf που τους δίνετε και ζητάτε σας στείλουν μια φώτο της οθόνης στο μαιλ σας (στην ουσία αυτό το κάνει και το e-class/e-me) </p>
+<p>2. Ανεβάζετε στον προσωπικό σας λογαριασμό στο ΠΣΔ (μέσα σε ένα φάκελο με όνομα word) τα αρχεία που περιέχονται στο <a href="serverside.zip">serverside.zip </a>.</p>
+<p>-----</p>
+<p><strong>Σχετικά με την Επιλογή 2:</strong></p>
+<p>- Ανεβάζετε τα περιεχόμενα του <a href="serverside.zip">serverside.zip</a>  στον φάκελο <strong>word</strong> του λογαριασμού σας στο ΠΣΔ. </p>
+<p>- Φτιάχνετε ένα link πχ <strong>http://keimeno.menospiti.tk?schusr=my_sch_username</strong> </p>
+<p>- Το παραπάνω σημαίνει ότι η φόρμα θα στέλνει ότι γράφουν οι μαθητές στο <strong>http://users.sch.gr/my_sch_username/word/index.php</strong></p>
+<p>- Τα αποτελέσματα τα βλέπετε από το url <strong>http://users.sch.gr/my_sch_username/word/answers.htm</strong></p>
+<p>- Οι default παράμετροι είναι : εικόνα: image.jpg , φάκελος: word</p>
+<p> </p>
+<p><strong><span style="font-size: 14pt;">Παραμετροποίηση :</span></strong></p>
+<p><strong>Δική σας εικόνα image.jpg (schimg):</strong></p>
+<p>Για να φτιάξετε το δικό σας image.jpg, μπορείτε να γράψετε ένα κείμενο στον editor αυτό και με print screeen να το αποθηκεύσετε την εικόνα.</p>
+<p><strong>Αρχείο index.php</strong>  <strong>(schhandler):</strong></p>
+<p>Το μόνο που κάνει είναι να αποθηκεύει τα στοιχεία που ποστάρουν οι μαθητές στο αρχείο answers.htm. Από εκεί μπορείτε να αλλάξετε το αρχείο αποθήκευσης.</p>
+<p><strong>Άλλος φάκελος αντί για "word" (schdir)</strong></p>
+<p> </p>
+<p><strong><span style="font-size: 14pt;">Παραδείγματα:</span></strong></p>
+<p><strong>http://keimeno.menospiti.tk?schusr=my_sch_username</strong><strong>&amp;schdir=folder2</strong></p>
+<p>To παραπάνω θα στείλει τα αποτελέσματα στο <strong>http://users.sch.gr/my_sch_username/</strong><strong>folder2</strong><strong>/index.php</strong></p>
+<p>Αποτελέσματα :  <strong>http://users.sch.gr/my_sch_username/</strong><strong>folder2</strong><strong>/answers.htm</strong></p>
+<p><strong>____</strong></p>
+<p><strong>http://keimeno.menospiti.tk?schusr=my_sch_username</strong><strong>&amp;schdir=otherfolder&amp;</strong><strong>schhandler</strong><strong>=index2.php</strong></p>
+<p>To παραπάνω θα στείλει τα αποτελέσματα στο <strong>http://users.sch.gr/my_sch_username/</strong><strong>otherfolder</strong><strong>/index2.php</strong></p>
+<p>Αποτελέσματα :  <strong>http://users.sch.gr/my_sch_username/</strong><strong>otherfolder</strong><strong>/answers.htm</strong></p>
+
+	</body>
