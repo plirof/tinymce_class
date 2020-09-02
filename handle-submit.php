@@ -12,7 +12,7 @@ Changes
 print_r ($_REQUEST);
 
 
-$mytext=$_REQUEST["mytext"] ;
+$mytext=$_REQUEST["text_entered"] ;
 
 echo "<HR>";
 //$cur_date= date('Ymd');
