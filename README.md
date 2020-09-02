@@ -2,6 +2,7 @@
 Class tinymce skeleton/template
 
 # Changes:
+- 200902 - tinymce_submit.html  + handle-submit.php (save ergasies to /mnt/home/downloads_linux/word_saved_data )
 - 200115 - added gecko_spellcheck : true,   (use browser build-in dictionary) & added plugin "image"
 - 200110 - added gecko_spellcheck : true,   (use browser build-in dictionary) & added plugin "image"
 - 200108 - giorti_apokries01.htm
@@ -26,6 +27,20 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 - Διαλυτικά: [για Linux + Win ] ταυτόχρονα Shift + ‘τόνος’ και μετά το φωνήεν.
 - Διαλυτικά και τόνος όπως “Μαΐου”:    [για Linux] ταυτόχρονα Shift+ ‘τόνος‘, μετά ξανά ‘τόνος’ και μετά το φωνήεν.
 
+
+
+# tinymce_submit.html  + handle-submit.php
+Form with name/class entry fields that saves to folder 
+
+link__word_saved_data.sh
+```bash
+mkdir -p /mnt/home/downloads_linux/word_saved_data
+#delete folder word_saved_data (if exists to create a symlink)
+rm word_saved_data
+#ln -s ./word_saved_data /mnt/home/downloads_linux/word_saved_data
+
+ln -s /mnt/home/downloads_linux/word_saved_data ./word_saved_data/
+```
 
 # Template for numbered table (for lesson with songs etc)
 ```html
