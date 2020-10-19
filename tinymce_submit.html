@@ -3,9 +3,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin">
-  	
+ 
+ 
+  </script>
 
-  </script>-->
+Changes:
+-201019 - hidesubmit option
+
+-->
   <script src="js/tinymce/tinymce.min.js" referrerpolicy="origin">
 
   </script>
@@ -33,6 +38,7 @@
 <body>
 	<form action="handle-submit.php" method="post" onsubmit="tinyMCE.triggerSave()">
 		<textarea name="text_entered" ></textarea>
+		<div id="div-submit" ><!------------------------------div-submit -->
 		<label for="name">ΟΝΟΜΑ ΣΧΟΛΕΙΟΥ:</label>
 		<input type="text" id="schoolname" name="schoolname" size=15>
 		<br>
@@ -55,6 +61,7 @@
 		<br>
 		<br>
 		<input type="submit" value="ΥΠΟΒΟΛΗ"> 
+		</div><!--------------------------------------------div-submit -->
 	</form>
   <hr>
   <p onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" >
