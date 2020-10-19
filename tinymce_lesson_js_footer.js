@@ -4,10 +4,10 @@
 *
 *
 * Changes:
-* ver201019 - hidesubmit -hides submit fields&button : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&hidesubmit
+* ver201019b -showsubmit -shows submit fields&button : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&showsubmit
 * ver200121 - hidediv1-hidediv7 : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&hidediv2&hidediv1
 * ver200114 - probeserver reloads every 30sec, else load it once
-* ver191216 -initial tinymce version - sample http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
+* ver191216 - initial tinymce version - sample http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
 * 
 * example : index.html?showdiv5\&timer3\&probeserver , 
 */
@@ -35,10 +35,11 @@ console.log(file_name_param);
     var url_hidediv7=location.search.substring(1).indexOf("hidediv7");
 // ))))))))))))))))  option to hide only specific DIV  )))))))))))))))))))))))
 
-// (((((((((((((((((((((((((( option to hide submit button & name/school input fields ((((((((((
-    var url_show_submit_button=location.search.substring(1).indexOf("hidesubmit");// != to -1 if we have this param
-    if(url_show_submit_button!==-1) {console.log("DIV-SUBMIT-HIDE");document.getElementById("div-submit").style.display = "none";}
-// )))))))))))))))))))))))))) option to hide submit button & name/school input fields ))))))))
+// (((((((((((((((((((((((((( option to show submit button & name/school input fields ((((((((((
+    var url_show_submit_button=location.search.substring(1).indexOf("showsubmit");// != to -1 if we have this param
+    document.getElementById("div-submit").style.display = "none";
+    if(url_show_submit_button!==-1) {console.log("DIV-SUBMIT-style.display=block(show)");document.getElementById("div-submit").style.display = "block";}
+// )))))))))))))))))))))))))) option to show submit button & name/school input fields ))))))))
 
 
 //+++++++++++++++++++ probeserver4lessons v02 1911+++++++++++++++++
