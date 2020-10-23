@@ -2,6 +2,7 @@
 Class tinymce skeleton/template
 
 # Changes:
+- 201022 -norightclick v01-disables right click & paste : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&norightclick
 - 200902 - tinymce_submit.html  + handle-submit.php (save ergasies to /mnt/home/downloads_linux/word_saved_data )
 - 200115 - added gecko_spellcheck : true,   (use browser build-in dictionary) & added plugin "image"
 - 200110 - added gecko_spellcheck : true,   (use browser build-in dictionary) & added plugin "image"
@@ -29,6 +30,20 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 - browser_spellcheck: true  must replace gecko_spellcheck : true (because it is deprecated)
 
 # Disable right click
+
+```javascript
+// ((((((((((((((( RIGHT CLICK DISABLE
+function norightclick_activate()
+{
+window.tinymce.get('text_entered').getWin().document.oncontextmenu = function(){console.log("textarea :oncontextmenu right click-DISABLED"); return false;}; 
+console.log("INSIDE after_tinymce_initzzzzzzzzzzzzzzzzzzzzzzzz");
+}
+var url_norightclick=location.search.substring(1).indexOf("norightclick");// != to -1 if we have this param
+if(url_norightclick!==-1) {    setTimeout(norightclick_activate, 2000); }
+// ))))))))))))))) RIGHT CLICK DISABLE
+
+
+//Alternative #2
 <script> 
   //OK WORKS !!!
 tinymce.init({
@@ -38,10 +53,11 @@ tinymce.init({
 
 </script>
 
-//Alternative:
+
+//Alternative #3:
 
 contextmenu: 'bold italic underline'
-
+```
 
 # tinymce_submit.html  + handle-submit.php
 Form with name/class entry fields that saves to folder 

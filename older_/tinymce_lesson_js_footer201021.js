@@ -4,7 +4,6 @@
 *
 *
 * Changes:
-* ver201022 -norightclick v01-disables right click & paste : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&norightclick
 * ver201019b -showsubmit -shows submit fields&button : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&showsubmit
 * ver200121 - hidediv1-hidediv7 : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&hidediv2&hidediv1
 * ver200114 - probeserver reloads every 30sec, else load it once
@@ -41,16 +40,6 @@ console.log(file_name_param);
     document.getElementById("div-submit").style.display = "none";
     if(url_show_submit_button!==-1) {console.log("DIV-SUBMIT-style.display=block(show)");document.getElementById("div-submit").style.display = "block";}
 // )))))))))))))))))))))))))) option to show submit button & name/school input fields ))))))))
-
-// ((((((((((((((( RIGHT CLICK DISABLE
-function norightclick_activate()
-{
-window.tinymce.get('text_entered').getWin().document.oncontextmenu = function(){console.log("textarea :oncontextmenu right click-DISABLED"); return false;}; 
-console.log("INSIDE after_tinymce_initzzzzzzzzzzzzzzzzzzzzzzzz");
-}
-var url_norightclick=location.search.substring(1).indexOf("norightclick");// != to -1 if we have this param
-if(url_norightclick!==-1) {    setTimeout(norightclick_activate, 2000); }
-// ))))))))))))))) RIGHT CLICK DISABLE
 
 
 //+++++++++++++++++++ probeserver4lessons v02 1911+++++++++++++++++
