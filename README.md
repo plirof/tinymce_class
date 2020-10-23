@@ -26,7 +26,7 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 # Notes :
 - Διαλυτικά: [για Linux + Win ] ταυτόχρονα Shift + ‘τόνος’ και μετά το φωνήεν.
 - Διαλυτικά και τόνος όπως “Μαΐου”:    [για Linux] ταυτόχρονα Shift+ ‘τόνος‘, μετά ξανά ‘τόνος’ και μετά το φωνήεν.
-
+- browser_spellcheck: true  must replace gecko_spellcheck : true (because it is deprecated)
 
 # Disable right click
 <script> 
@@ -37,6 +37,10 @@ tinymce.init({
 });
 
 </script>
+
+//Alternative:
+
+contextmenu: 'bold italic underline'
 
 
 # tinymce_submit.html  + handle-submit.php
