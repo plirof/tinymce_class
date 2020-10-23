@@ -28,6 +28,16 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 - Διαλυτικά και τόνος όπως “Μαΐου”:    [για Linux] ταυτόχρονα Shift+ ‘τόνος‘, μετά ξανά ‘τόνος’ και μετά το φωνήεν.
 
 
+# Disable right click
+<script> 
+  //OK WORKS !!!
+tinymce.init({
+  selector: 'textarea',
+  contextmenu_never_use_native: true
+});
+
+</script>
+
 
 # tinymce_submit.html  + handle-submit.php
 Form with name/class entry fields that saves to folder 
@@ -101,4 +111,4 @@ ln -s /mnt/home/downloads_linux/word_saved_data ./word_saved_data/
 - add option to send text as a url parameter (instead of file)
 - remote option : add <form> , add name , class, school and SUMBIT button
 - remote : remote username of sch.gr ,remote sch folder then inside it remote_html file, remote_jpg file , remote index.php file that saves/appends locally ergasies in html
--
+- gecko_spellcheck is deprecated/replaced by browser_spellcheck: true
