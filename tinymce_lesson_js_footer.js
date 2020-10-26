@@ -4,6 +4,7 @@
 *
 *
 * Changes:
+* ver201026 -nocopy v01-adds EXTRA text to copied text (to prevent usage of copu/paste) : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&nocopy
 * ver201022 -norightclick v01-disables right click & paste : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&norightclick
 * ver201019b -showsubmit -shows submit fields&button : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&showsubmit
 * ver200121 - hidediv1-hidediv7 : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&hidediv2&hidediv1
@@ -41,6 +42,20 @@ console.log(file_name_param);
     document.getElementById("div-submit").style.display = "none";
     if(url_show_submit_button!==-1) {console.log("DIV-SUBMIT-style.display=block(show)");document.getElementById("div-submit").style.display = "block";}
 // )))))))))))))))))))))))))) option to show submit button & name/school input fields ))))))))
+
+// (((((((((((((((((((((((((( Add text to copy 201026a &nocopy parameter
+function prevent_copy_activate()
+{
+  window.tinymce.get('text_entered').getWin().document.addEventListener('copy', (event) => {
+      console.log("DEBUG - INSIDE Add text to copy WWWWWWWWWWWWWWWWWWWWW2="+window.tinymce.get('text_entered').getWin().document.getSelection());
+      const modified_copy_text = `\n++++++++++++++++++\nΑΝΤΕΓΡΑΜΜΕΝΟ ΚΕΙΜΕΝΟ :\n++++++++++++++++++`;
+      event.clipboardData.setData('text', modified_copy_text+ window.tinymce.get('text_entered').getWin().document.getSelection());
+      event.preventDefault();
+  });
+}
+var url_nocopy=location.search.substring(1).indexOf("nocopy");// != to -1 if we have this param
+if(url_nocopy!==-1) {   setTimeout(prevent_copy_activate, 2000);  }
+// )))))))))))))))))))))))))) Add text to copy
 
 // ((((((((((((((( RIGHT CLICK DISABLE
 function norightclick_activate()

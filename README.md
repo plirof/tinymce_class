@@ -2,6 +2,7 @@
 Class tinymce skeleton/template
 
 # Changes:
+- 201026 -nocopy v01-adds EXTRA text to copied text (to prevent usage of copu/paste) : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&nocopy
 - 201022 -norightclick v01-disables right click & paste : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&norightclick
 - 200902 - tinymce_submit.html  + handle-submit.php (save ergasies to /mnt/home/downloads_linux/word_saved_data )
 - 200115 - added gecko_spellcheck : true,   (use browser build-in dictionary) & added plugin "image"
@@ -29,8 +30,26 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 - Διαλυτικά και τόνος όπως “Μαΐου”:    [για Linux] ταυτόχρονα Shift+ ‘τόνος‘, μετά ξανά ‘τόνος’ και μετά το φωνήεν.
 - browser_spellcheck: true  must replace gecko_spellcheck : true (because it is deprecated)
 
-# Disable right click
 
+# Add extra text when copying {&nocopy} (to prevent copy)
+```javascript
+// (((((((((((((((((((((((((( Add text to copy 201026a &nocopy parameter
+function prevent_copy_activate()
+{
+  window.tinymce.get('text_entered').getWin().document.addEventListener('copy', (event) => {
+      console.log("DEBUG - INSIDE Add text to copy WWWWWWWWWWWWWWWWWWWWW2="+window.tinymce.get('text_entered').getWin().document.getSelection());
+      const modified_copy_text = `\n++++++++++++++++++\nΑΝΤΕΓΡΑΜΜΕΝΟ ΚΕΙΜΕΝΟ :\n++++++++++++++++++`;
+      event.clipboardData.setData('text', modified_copy_text+ window.tinymce.get('text_entered').getWin().document.getSelection());
+      event.preventDefault();
+  });
+}
+var url_nocopy=location.search.substring(1).indexOf("nocopy");// != to -1 if we have this param
+if(url_nocopy!==-1) {   setTimeout(prevent_copy_activate, 2000);  }
+// )))))))))))))))))))))))))) Add text to copy
+```
+
+# Disable right click {&norightclick} 
+Note (maybe nocopy param is better)
 ```javascript
 // ((((((((((((((( RIGHT CLICK DISABLE
 function norightclick_activate()
