@@ -1,3 +1,8 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+   </head>
+   <body>
 <?php
 /*
 200902 - initial version - different file per submission 
@@ -29,8 +34,10 @@ $txt = "$mytext\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 
-
+echo "<HR><h2>Η εργασία σας καταχωρήθηκε.</h2> Παρακαλώ κλείστε αυτήν την καρτέλα.";
 
 
 
 ?>
+</body> 
+</html>
