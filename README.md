@@ -2,6 +2,7 @@
 Class tinymce skeleton/template
 
 # Changes:
+- 211217 added file=pics option (which loads pic1.jpg ... in each div)
 - 201026 -nocopy v01-adds EXTRA text to copied text (to prevent usage of copu/paste) : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&nocopy
 - 201022 -norightclick v01-disables right click & paste : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&norightclick
 - 200902 - tinymce_submit.html  + handle-submit.php (save ergasies to /mnt/home/downloads_linux/word_saved_data )
