@@ -2,6 +2,8 @@
 Class tinymce skeleton/template
 
 # Changes:
+- 221213 - Added PC number drop box for PC number
+- 221013 - both tinymce.html & tinymce_submit.html are the same (both hide submit and need ?showsubmit param )
 - 211217 added file=pics option (which loads pic1.jpg ... in each div)
 - 201026 -nocopy v01-adds EXTRA text to copied text (to prevent usage of copu/paste) : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&nocopy
 - 201022 -norightclick v01-disables right click & paste : eg http://192.168.1.200/tinymce_class/tinymce_template_form.html?file=temp_test01&norightclick
@@ -19,6 +21,9 @@ Class tinymce skeleton/template
 These will display the file (.htm) specified.
 - http://192.168.1.200/tinymce_class/tinymce.html?file=giorti_apokries01
 
+This will show the form& the submit button
+- http://192.168.1.200/tinymce_class/tinymce.html?showsubmit
+
 These will probe for the file (.htm) every 30seconds
 - http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=lesson05
 - http://192.168.1.200/tinymce_class/tinymce.html?probeserver&file=giorti25mart01
@@ -32,7 +37,16 @@ Tip: if you add the word "reload" anywhere in the text file you will get a full 
 - browser_spellcheck: true  must replace gecko_spellcheck : true (because it is deprecated)
 
 
-# Add extra text when copying {&nocopy} (to prevent copy)
+
+# To Do:
+- maybe need to set browser_spellcheck: false to avoid student confusion
+- add option to send text as a url parameter (instead of file)
+- DONE -remote option : add <form> , add name , class, school and SUMBIT button
+- remote : remote username of sch.gr ,remote sch folder then inside it remote_html file, remote_jpg file , remote index.php file that saves/appends locally ergasies in html
+- DONE gecko_spellcheck is deprecated/replaced by browser_spellcheck: true
+
+
+# Add extra text when copying {&nocopy} (to prevent copy/paste)
 ```javascript
 // (((((((((((((((((((((((((( Add text to copy 201026a &nocopy parameter
 function prevent_copy_activate()
@@ -123,32 +137,28 @@ ln -s /mnt/home/downloads_linux/word_saved_data ./word_saved_data/
 </table>
 ```
 
-# init script
+# init script for tinymce
 
 ```javascript
 <script>tinymce.init({
-  	selector:'textarea',
-  	language: 'el',
+    selector:'textarea',
+    language: 'el',
     entity_encoding: "raw",
     height: "300",
     menubar: 'file edit view insert format tools table help',
     plugins: [
-             "table","image"
+             "table","image", 
     ],    
-    toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
-    gecko_spellcheck : true,
-  //toolbar_sticky: true,
-  //table_responsive_width: true,
+    toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | outdent indent |  numlist bullist | backcolor removeformat | forecolor | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | alignleft aligncenter alignright alignjustify | ltr rtl',
+    table_toolbar : "" , //Disables the internal table popup toolbar
+    browser_spellcheck : true, 
+    //gecko_spellcheck : true, //deprecated
+    //toolbar_sticky: true,
+    //table_responsive_width: true,
   
 
 
 
-	});
+  });
 </script>
 ```
-
-# To Do:
-- add option to send text as a url parameter (instead of file)
-- remote option : add <form> , add name , class, school and SUMBIT button
-- remote : remote username of sch.gr ,remote sch folder then inside it remote_html file, remote_jpg file , remote index.php file that saves/appends locally ergasies in html
-- gecko_spellcheck is deprecated/replaced by browser_spellcheck: true
